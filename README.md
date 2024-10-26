@@ -1,6 +1,6 @@
 # Portafolio Dilan
 
-[Visita mi portafolio aquí](https://dilan-albert-murcia-parra.netlify.app/) [Articulos](https://dilan-albert-murcia-parra.netlify.app/posts/)
+[Demo](https://dilan-albert-murcia-parra.netlify.app/) [Articulos](https://dilan-albert-murcia-parra.netlify.app/posts/)
 
 ---
 

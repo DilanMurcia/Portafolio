@@ -2,7 +2,7 @@
 
 Devolio is a free portfolio and blog template to help you setup your personal website quickly.
 
-[Demo](dilan-albert-murcia-parra.netlify.app/) [Article](https://dilan-albert-murcia-parra.netlify.app/using-mdx/)
+[Demo](https://dilan-albert-murcia-parra.netlify.app/) [Article](https://dilan-albert-murcia-parra.netlify.app/using-mdx/)
 
 ---
 

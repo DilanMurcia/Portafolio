@@ -13,10 +13,9 @@ const { title, description, image } = Astro.props;
   <head>
     <BaseHead title={title} description={description} image={image} />
   </head>
-  <body class="bg-white dark:bg-zinc-900 dark:text-zinc-100 pt-16 sm:pt-0 relative overflow-hidden">
-    <!-- Canvas para el fondo -->
-    <canvas id="neuralNetwork" class="absolute top-0 left-0 w-full h-full -z-10"></canvas>
-
+  <body class="class=bg-white dark:bg-black dark:text-zinc-100 pt-16 sm:pt-0">
+        <!-- Canvas para el fondo -->
+        <canvas id="neuralNetwork" class="absolute top-0 left-0 w-full h-full -z-10"></canvas>
     <Header />
     <div class='py-8 min-h-[calc(100vh-160px)]'>
       <slot />

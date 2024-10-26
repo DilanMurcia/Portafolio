@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+	
 	pre,
 	code {
 		font-size: 0.875rem;

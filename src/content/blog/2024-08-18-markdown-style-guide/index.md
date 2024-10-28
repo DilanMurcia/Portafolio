@@ -5,7 +5,7 @@ slug: 'markdown-style-guide'
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
 pubDate: '2024-10-25'
 updatedDate: '2024-10-25'
-tags: ['Markdown', 'Guide']
+tags: ['Servicios', 'SaaS']
 coverImage: './blog-placeholder-4.jpg'
 ---
 

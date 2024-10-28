@@ -5,7 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostsByYear from '../../components/PostsByYear.astro';
 
 type BlogPost = CollectionEntry<'blog'>;
-const title = 'Todas mis publicaciones';
+const title = 'Todos mis servicios';
 const description = 'Articulos, guias y tutoriales sobre desarrollo web, programación y tecnología en general.';
 
 const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());

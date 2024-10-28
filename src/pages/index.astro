@@ -42,8 +42,8 @@ const posts = (await getCollection('blog'))
 		<main>
 			<div class='mt-6 mb-12'>
 				<div class='flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700'>
-					<h2 class='text-lg font-bold mb-3'>Publicaciones recientes</h2>
-					<a href='/posts/' class='inline-block py-2 underline dark:prose-invert'>Publicaciones &raquo;</a>
+					<h2 class='text-lg font-bold mb-3'>Mis servicios</h2>
+					<a href='/posts/' class='inline-block py-2 underline dark:prose-invert'>Servicios &raquo;</a>
 				</div>
 				<div>
 					{posts.map((post: BlogPost) => <PostItem post={post} />)}

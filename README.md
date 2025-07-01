@@ -1,68 +1,63 @@
-# Portafolio Dilan
+# Portafolio de Dilan Albert Murcia Parra
 
-[Demo](https://dilan-albert-murcia-parra.netlify.app/) [Articulos](https://dilan-albert-murcia-parra.netlify.app/posts/)
+Este es mi portafolio personal como desarrollador de software. He construido esta web con la intención de mostrar mis proyectos, habilidades, y ofrecer mis servicios como freelance, utilizando herramientas modernas como Astro, Tailwind CSS y TypeScript.
 
 ---
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/DilanMurcia/Portafolio)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/DilanMurcia/Portafolio)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DilanMurcia/Portafolio?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## 🌐 Sitio en producción
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/DilanMurcia/Portafolio)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDilanMurcia%2FPortafolio)
+🔗 [https://dilan-albert-murcia-parra.netlify.app](https://dilan-albert-murcia-parra.netlify.app)
 
-Features:
+---
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Post tags
-- ✅ Projects
-- ✅ Table of content
+## 🚀 Tecnologías utilizadas
 
-## 🚀 Project Structure
+- [Astro](https://astro.build/) – Framework estático y optimizado para rendimiento
+- [Tailwind CSS](https://tailwindcss.com/) – Utilidades CSS modernas
+- [TypeScript](https://www.typescriptlang.org/) – Superset tipado de JavaScript
+- [pnpm](https://pnpm.io/) – Gestor de paquetes rápido y eficiente
+- [Heroicons](https://heroicons.com/) – Íconos SVG por Tailwind Labs
+- Markdown + MDX – Para gestionar contenidos y blogs
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-├── public/
+## 📁 Estructura del proyecto
+
+```bash
+Portafolio/
+├── public/              # Recursos públicos (imágenes, CV, JS)
+│   ├── cv/              # Hoja de vida en PDF
+│   └── blog-placeholder-*.jpg
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-│   └── styles/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+│   ├── assets/          # Imágenes del sitio
+│   ├── components/      # Componentes Astro reutilizables (Prose, ProjectList, etc.)
+│   ├── layouts/         # Layouts base como BaseLayout.astro
+│   ├── pages/           # Páginas principales: proyectos, servicios, posts, etc.
+│   └── consts.ts        # Título, descripción y tagline del sitio
+├── astro.config.mjs     # Configuración principal de Astro
+├── tailwind.config.mjs  # Configuración de estilos con Tailwind
+├── package.json         # Dependencias y scripts del proyecto
+└── pnpm-lock.yaml       # Resoluciones exactas de dependencias
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## ✨ Funcionalidades
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+- 📄 Presentación personal con imagen e introducción
+- 🛠️ Sección de proyectos dinámicos (con componente `ProjectList`)
+- 🧠 Blog/Servicios con publicaciones cargadas desde `content/`
+- 📥 Descarga directa de mi CV en PDF (`/public/cv/CVDilanMurcia.pdf`)
+- 📱 Responsive y optimizado para móviles
+- 🌙 Soporte para modo oscuro (dark mode)
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
+## 📦 Instalación local
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                    | Action                                           |
-| :------------------------- | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm run build`           | Build your production site to `./dist/`          |
-| `pnpm run preview`         | Preview your build locally, before deploying     |
-| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Astro documentation](https://docs.astro.build).
+```bash
+git clone https://github.com/DilanMurcia/Portafolio.git
+cd Portafolio
+pnpm install
+pnpm dev
+```

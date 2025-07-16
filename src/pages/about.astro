@@ -5,35 +5,65 @@ import Dilan from '@src/assets/img/logo.jpg';
 import Prose from '../components/Prose.astro';
 ---
 
-<BaseLayout title='About Me' description='Conoce a Dilan, desarrollador de software'>
+<BaseLayout
+	title='Acerca de Dilan - Especialista en IA y Automatización'
+	description='Conoce la trayectoria y experiencia de Dilan Albert Murcia Parra en desarrollo de software, IA y automatización.'
+>
 	<div class='container'>
 		<main class='prose text-lg dark:prose-invert'>
 			<article>
 				<div class='w-full md:flex md:items-center gap-16 mb-10'>
 					<div class='text-pretty leading-9'>
-						<h1 class='text-4xl font-bold mb-4'>Hola a todos 👋, Soy Dilan!</h1>
+						<h1 class='text-4xl font-bold mb-4'>¡Hola! Soy Dilan Albert Murcia Parra</h1>
 						<Prose>
 							<div class='text-lg'>
 								<p>
-									Soy un apasionado desarrollador de software con experiencia en la creación de soluciones innovadoras y eficientes. Me
-									encanta resolver problemas complejos y aprender nuevas tecnologías.
+									Soy un <strong>desarrollador de software</strong> apasionado por la innovación tecnológica y la creación de soluciones de impacto.
+									Mi especialidad se centra en la <strong>Inteligencia Artificial</strong> y la <strong>
+										automatización de procesos</strong
+									>, ayudando a negocios a ser más eficientes y competitivos.
 								</p>
 								<p>
-									Actualmente, busco oportunidades en la industria tecnológica donde pueda crecer profesionalmente. ¡Hablemos si tienes un
-									proyecto interesante!
+									Con una sólida base en <strong>ingeniería de sistemas</strong>, poseo experiencia en lenguajes como Java, C/C++,
+									JavaScript, Python, y en bases de datos como MySQL, PostgreSQL y MongoDB. Esta trayectoria me permite construir soluciones
+									robustas y escalables para tus proyectos más complejos.
+								</p>
+
+								<p class='text-lg'>
+									<a href='cv/CVDilanMurcia.pdf' class='inline-block py-2 underline dark:prose-invert' download>
+										Descargar mi CV completo &raquo;
+									</a>
 								</p>
 							</div>
 						</Prose>
 					</div>
 					<Image src={Dilan} alt='Dilan Albert Murcia Parra' width={300} class='rounded-3xl rotate-3 mx-4 md:mx-0' />
 				</div>
+
 				<div class='about-me'>
-					<h2 class='text-3xl font-extrabold mb-4 border-b-2 border-white pb-2'>Sobre mí</h2>
+					<h2 class='text-3xl font-extrabold mb-4 border-b-2 border-white pb-2'>Mi Enfoque y Servicios</h2>
 					<p class='text-lg mb-4'>
-						Hola, soy <span class='font-bold'>Dilan Albert Murcia Parra</span>. Estoy comprometido con el aprendizaje continuo y busco
-						colaborar en proyectos que me desafíen y me permitan crecer.
+						Como freelancer, mi misión es transformar los desafíos de tu negocio en oportunidades a través de la tecnología. Me especializo
+						en:
 					</p>
-					<p class='text-lg mb-4'>Si estás interesado en conectar o explorar posibles colaboraciones, no dudes en contactarme.</p>
+					<ul class='list-disc pl-5 mb-4'>
+						<li class='text-lg mb-2'>
+							Diseño e implementación de <strong>Agentes de IA Personalizados</strong> (chatbots inteligentes, asistentes virtuales) para optimizar
+							la atención al cliente y la generación de leads.
+						</li>
+						<li class='text-lg mb-2'>
+							Creación de <strong>Sitios Web Inteligentes</strong> que automatizan contenido, personalizan experiencias y se integran con funcionalidades
+							de IA.
+						</li>
+						<li class='text-lg mb-2'>
+							Desarrollo de <strong>Flujos de Automatización con n8n</strong> para conectar tus aplicaciones, eliminar tareas manuales y mejorar
+							la eficiencia operativa.
+						</li>
+						<li class='text-lg mb-2'>
+							Sistemas de <strong>Clonación de Estilo con IA</strong> para mantener la coherencia de tu marca en la generación de contenido de
+							texto e imagen.
+						</li>
+					</ul>
 				</div>
 			</article>
 		</main>

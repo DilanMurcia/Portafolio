@@ -28,7 +28,7 @@ Combino el **diseño web moderno y responsivo** (usando tecnologías como las qu
 
 ### **Demo: Generación Automática de Descripciones de Producto para E-commerce**
 
-**[Inserta aquí un video corto o capturas de pantalla de la demo. Podrías mostrar una interfaz simple donde se introduce un nombre de producto y la IA genera una descripción que luego se publica en una página de producto ficticia.]**
+**[]**
 
 **Descripción de la demo:** Observa cómo un simple título de producto puede transformarse automáticamente en una descripción detallada y persuasiva con la ayuda de la IA, ideal para tiendas online con grandes catálogos.
 

@@ -4,7 +4,9 @@ slug: 'sitios-web-automatizados-ia'
 description: 'Desarrollo de sitios web que incorporan IA para automatizar tareas, personalizar la experiencia del usuario y generar contenido dinámico.'
 tags: ['Servicios', 'Desarrollo Web', 'IA', 'Automatización Web']
 pubDate: '2025-07-16'
-coverImage: './blog-placeholder-4.jpg' # Imagen de ejemplo
+locale: 'es'
+translationKey: 'sitios-web'
+coverImage: './blog-placeholder-4.jpg'
 ---
 
 ## Tu Próximo Sitio Web: Más que Estático, ¡Inteligente!

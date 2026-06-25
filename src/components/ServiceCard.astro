@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const quoteHref = `/${lang}/contact/?service=${encodeURIComponent(post.data.title)}`;
+---
+
+<article
+	class='border dark:border-zinc-700 rounded-xl shadow-sm p-5 flex flex-col gap-3 bg-white dark:bg-zinc-900/40'
+>
+	{
+		post.data.coverImage && (
+			<div class='overflow-hidden rounded-lg aspect-video'>
+				<Image
+					src={post.data.coverImage}
+					alt={post.data.title}
+					class='w-full h-full object-cover'
+					widths={[320, 640]}
+					sizes='(max-width: 768px) 100vw, 320px'
+				/>
+			</div>
+		)
+	}
+	<header>
+		<h3 class='text-xl font-semibold mb-1'>
+			<a href={`/${lang}/posts/${post.slug}/`} class='hover:underline'>
+				{post.data.title}
+			</a>
+		</h3>
+		{
+			post.data.description && (
+				<p class='text-zinc-600 dark:text-zinc-400 text-sm'>{post.data.description}</p>
+			)
+		}
+	</header>
+	{
+		post.data.tags && (
+			<div class='flex flex-wrap gap-1'>
+				{post.data.tags.map((tag: string) => (
+					<span class='text-xs border border-zinc-300 dark:border-zinc-700 rounded-full px-2 py-0.5 text-zinc-700 dark:text-zinc-300'>
+						#{tag}
+					</span>
+				))}
+			</div>
+		)
+	}
+	<footer class='flex justify-between items-center mt-auto pt-2'>
+		<a href={`/${lang}/posts/${post.slug}/`} class='text-sm underline'>
+			{t('services.readMore')} »
+		</a>
+		<a
+			href={quoteHref}
+			class='text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors'
+		>
+			{t('btn.quote')}
+		</a>
+	</footer>
+</article>

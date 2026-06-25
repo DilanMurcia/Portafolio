@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+	title={`${t('contact.title')} - Dilan Murcia`}
+	description='Ready to take your business to the next level? Contact me by email or WhatsApp.'
+>
+	<div class='container max-w-3xl'>
+		<header class='mb-10 text-center'>
+			<h1 class='text-3xl md:text-4xl font-bold mb-3'>{t('contact.title')}</h1>
+			<p class='text-zinc-700 dark:text-zinc-300 text-lg'>{t('contact.subtitle')}</p>
+		</header>
+
+		<div class='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12'>
+			<a
+				href='mailto:dapdesarrollador@gmail.com?subject=Inquiry%20from%20portfolio&body=Hi%20Dilan%2C%0A%0A'
+				class='flex flex-col items-center gap-3 border dark:border-zinc-700 rounded-xl p-8 hover:border-blue-500 transition-colors text-center'
+			>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='40'
+					height='40'
+					viewBox='0 0 24 24'
+					fill='none'
+					stroke='currentColor'
+					stroke-width='1.5'
+					stroke-linecap='round'
+					stroke-linejoin='round'
+					class='text-blue-600 dark:text-blue-400'
+				>
+					<rect width='20' height='16' x='2' y='4' rx='2'></rect>
+					<path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'></path>
+				</svg>
+				<h2 class='text-xl font-semibold'>{t('contact.email.label')}</h2>
+				<p class='text-blue-600 dark:text-blue-400 break-all'>dapdesarrollador@gmail.com</p>
+				<span class='text-sm text-zinc-500 dark:text-zinc-400'>{t('contact.send')} »</span>
+			</a>
+
+			<a
+				href='https://wa.me/573216903828?text=Hi%20Dilan%2C%20I%20am%20interested%20in%20your%20work.'
+				target='_blank'
+				rel='noopener noreferrer'
+				class='flex flex-col items-center gap-3 border dark:border-zinc-700 rounded-xl p-8 hover:border-green-500 transition-colors text-center'
+			>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='40'
+					height='40'
+					viewBox='0 0 24 24'
+					fill='none'
+					stroke='currentColor'
+					stroke-width='1.5'
+					stroke-linecap='round'
+					stroke-linejoin='round'
+					class='text-green-600 dark:text-green-400'
+				>
+					<path d='M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05.9'></path>
+					<path d='M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1'></path>
+				</svg>
+				<h2 class='text-xl font-semibold'>{t('contact.whatsapp')}</h2>
+				<p class='text-green-600 dark:text-green-400'>+57 321 690 3828</p>
+				<span class='text-sm text-zinc-500 dark:text-zinc-400'>{t('contact.send')} »</span>
+			</a>
+		</div>
+
+		<aside class='border-t dark:border-zinc-700 pt-8'>
+			<h2 class='text-lg font-semibold mb-4'>{t('contact.or')}</h2>
+			<div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+				<div class='flex flex-col gap-1'>
+					<span class='text-sm text-zinc-500 dark:text-zinc-400'>{t('contact.github')}</span>
+					<a
+						href='https://github.com/DilanMurcia'
+						target='_blank'
+						rel='noopener noreferrer'
+						class='text-blue-600 dark:text-blue-400 hover:underline'
+					>
+						github.com/DilanMurcia
+					</a>
+				</div>
+
+				<div class='flex flex-col gap-1'>
+					<span class='text-sm text-zinc-500 dark:text-zinc-400'>{t('contact.location')}</span>
+					<span>{t('contact.location.value')}</span>
+				</div>
+			</div>
+		</aside>
+	</div>
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectList from '../../../components/ProjectList.astro';
+import { projects } from '../../../data/projects';
+import { useTranslations } from '../../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+	title={`${t('projects.title')} - Dilan Murcia`}
+	description='Portfolio of real projects: web development, n8n automations, AI agents and more.'
+>
+	<div class='container'>
+		<div class='mb-10'>
+			<h1 class='text-3xl font-bold mb-2'>{t('projects.title')}</h1>
+			<p class='text-zinc-700 dark:text-zinc-300 text-lg'>{t('projects.subtitle')}</p>
+		</div>
+		<ProjectList projects={projects} />
+	</div>
+</BaseLayout>

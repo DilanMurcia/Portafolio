@@ -1,0 +1,26 @@
+---
+import { LANGUAGES, getPathWithLocale, getLangFromUrl, type Language } from '../i18n/utils';
+
+const currentLang = getLangFromUrl(Astro.url) as Language;
+const currentPath = Astro.url.pathname;
+
+const otherLangs = (Object.keys(LANGUAGES) as Language[]).filter((l) => l !== currentLang);
+---
+
+<div class='flex items-center gap-2'>
+	{
+		otherLangs.map((lang) => {
+			const href = getPathWithLocale(currentPath, lang);
+			const label = LANGUAGES[lang];
+			return (
+				<a
+					href={href}
+					aria-label={`Switch to ${label}`}
+					class='text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors'
+				>
+					{lang}
+				</a>
+			);
+		})
+	}
+</div>

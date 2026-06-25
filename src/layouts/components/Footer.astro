@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const today = new Date();
 ---
 
@@ -25,7 +29,7 @@ const today = new Date();
 			<i class='fab fa-twitter fa-2x'></i>
 		</a>
 		<a
-			href='https://wa.me/+573212641686'
+			href='https://wa.me/+573216903828'
 			target='_blank'
 			rel='noopener noreferrer'
 			class='text-black hover:text-gray-500 transition-colors dark:text-white hover:dark:text-gray-400'
@@ -45,6 +49,10 @@ const today = new Date();
 <div class='py-4 border-t dark:border-t-zinc-700'>
 	<div class='md:flex text-sm text-zinc-500 dark:text-zinc-300 prose dark:prose-invert justify-between py-4'>
 		<div>Copyright © {today.getFullYear()} Devolio.</div>
-		<div>Portafolio de <a href='https://github.com/DilanMurcia' target='_blank' rel='nofollow noopener'>Dilan Albert Murcia Parra</a></div>
+		<div>
+			{t('footer.builtWith')} <a href='https://astro.build' target='_blank' rel='nofollow noopener'>Astro</a> {t('footer.and')}
+			<a href='https://tailwindcss.com' target='_blank' rel='nofollow noopener'>Tailwind CSS</a>. {t('footer.by')}
+			<a href='https://github.com/DilanMurcia' target='_blank' rel='nofollow noopener'>Dilan Albert Murcia Parra</a>. {t('footer.rights')}
+		</div>
 	</div>
 </div>

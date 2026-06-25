@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Dilan from '@src/assets/img/logo.jpg';
+import Prose from '../../components/Prose.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+	title={`${t('about.title')} - Portfolio`}
+	description='Learn about the background and experience of Dilan Albert Murcia Parra in software development, AI and automation.'
+>
+	<div class='container'>
+		<main class='prose text-lg dark:prose-invert'>
+			<article>
+				<div class='w-full md:flex md:items-center gap-16 mb-10'>
+					<div class='text-pretty leading-9'>
+						<h1 class='text-4xl font-bold mb-4'>{t('about.title')}</h1>
+						<Prose>
+							<div class='text-lg'>
+								<p>
+									{t('about.bio.p1')} <strong>{t('about.bio.role')}</strong>
+									{t('about.bio.p1.cont')}
+									{t('about.bio.specialty')} <strong>{t('about.bio.ai')}</strong>
+									{t('about.bio.and')} <strong>{t('about.bio.automation')}</strong>
+									{t('about.bio.p2')}
+								</p>
+								<p>
+									{t('about.bio.p3')} <strong>{t('about.bio.engineering')}</strong>
+									{t('about.bio.p3.cont')}
+								</p>
+
+								<p class='text-lg'>
+									<a
+										href='/cv/CVDilanMurcia.pdf'
+										class='inline-block py-2 underline dark:prose-invert'
+										download
+									>
+										{t('btn.downloadCV')} »
+									</a>
+								</p>
+							</div>
+						</Prose>
+					</div>
+					<Image
+						src={Dilan}
+						alt='Dilan Albert Murcia Parra'
+						width={300}
+						class='rounded-3xl rotate-3 mx-4 md:mx-0'
+					/>
+				</div>
+
+				<div class='about-me'>
+					<h2 class='text-3xl font-extrabold mb-4 border-b-2 border-white pb-2'>
+						{t('about.services.title')}
+					</h2>
+					<p class='text-lg mb-4'>{t('about.services.intro')}</p>
+					<ul class='list-disc pl-5 mb-4'>
+						<li class='text-lg mb-2'>
+							{t('about.services.ai')} <strong>{t('about.services.ai.title')}</strong>
+							{t('about.services.ai.desc')}
+						</li>
+						<li class='text-lg mb-2'>
+							{t('about.services.web')} <strong>{t('about.services.web.title')}</strong>
+							{t('about.services.web.desc')}
+						</li>
+						<li class='text-lg mb-2'>
+							{t('about.services.n8n')} <strong>{t('about.services.n8n.title')}</strong>
+							{t('about.services.n8n.desc')}
+						</li>
+						<li class='text-lg mb-2'>
+							{t('about.services.clone')} <strong>{t('about.services.clone.title')}</strong>
+							{t('about.services.clone.desc')}
+						</li>
+					</ul>
+				</div>
+			</article>
+		</main>
+	</div>
+</BaseLayout>

@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SkillBadge from '../../components/SkillBadge.astro';
+import ExperienceItem from '../../components/ExperienceItem.astro';
+import { profile, skills, experience, education, courses } from '../../data/cv';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'es';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+	title={`${t('cv.title')} - Dilan Murcia`}
+	description='Hoja de vida completa: experiencia profesional, educación, habilidades técnicas, formación complementaria e idiomas.'
+>
+	<div class='container max-w-4xl'>
+		<header class='mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
+			<div>
+				<h1 class='text-3xl md:text-4xl font-bold mb-1'>{profile.name}</h1>
+				<p class='text-lg text-zinc-600 dark:text-zinc-400'>{profile.role.es}</p>
+				<p class='text-sm text-zinc-500 dark:text-zinc-500'>
+					{profile.location} · {profile.email} · {profile.phone}
+				</p>
+			</div>
+			<a
+				href='/cv/CVDilanMurcia.pdf'
+				download
+				class='inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors self-start md:self-auto'
+			>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='18'
+					height='18'
+					viewBox='0 0 24 24'
+					fill='none'
+					stroke='currentColor'
+					stroke-width='2'
+					stroke-linecap='round'
+					stroke-linejoin='round'
+				>
+					<path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'></path>
+					<polyline points='7 10 12 15 17 10'></polyline>
+					<line x1='12' y1='15' x2='12' y2='3'></line>
+				</svg>
+				{t('cv.download')}
+			</a>
+		</header>
+
+		<section class='mb-8'>
+			<h2 class='text-2xl font-bold mb-2 border-b dark:border-zinc-700 pb-1'>
+				{t('cv.experience')}
+			</h2>
+			{experience.map((exp) => <ExperienceItem experience={exp} />)}
+		</section>
+
+		<section class='mb-8'>
+			<h2 class='text-2xl font-bold mb-2 border-b dark:border-zinc-700 pb-1'>
+				{t('cv.education')}
+			</h2>
+			{
+				education.map((edu) => (
+					<article class='border-l-4 border-green-500 pl-4 py-2 mb-4'>
+						<header class='mb-1'>
+							<h3 class='text-xl font-semibold'>{edu.role.es}</h3>
+							<p class='text-zinc-600 dark:text-zinc-400'>
+								<span class='font-medium'>{edu.school}</span> · {edu.location}
+							</p>
+							<p class='text-sm text-zinc-500'>{edu.date.es}</p>
+						</header>
+						<ul class='list-disc pl-5 mt-2 space-y-1'>
+							{edu.description.es.map((line) => (
+								<li class='text-zinc-700 dark:text-zinc-300'>{line}</li>
+							))}
+						</ul>
+					</article>
+				))
+			}
+		</section>
+
+		<section class='mb-8'>
+			<h2 class='text-2xl font-bold mb-4 border-b dark:border-zinc-700 pb-1'>{t('cv.skills')}</h2>
+			<div class='space-y-4'>
+				{
+					skills.map((skill) => (
+						<div>
+							<h3 class='text-base font-semibold mb-2'>{skill.category.es}</h3>
+							<SkillBadge items={skill.items} />
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<section class='mb-8'>
+			<h2 class='text-2xl font-bold mb-2 border-b dark:border-zinc-700 pb-1'>{t('cv.courses')}</h2>
+			<ul class='space-y-2'>
+				{
+					courses.map((course) => (
+						<li class='flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 border-l-4 border-purple-500 pl-3 py-1'>
+							<div>
+								<span class='font-semibold'>{course.name}</span>
+								<span class='text-zinc-600 dark:text-zinc-400'> · {course.school}</span>
+							</div>
+							<span class='text-sm text-zinc-500'>{course.date}</span>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+
+		<section class='mb-8'>
+			<h2 class='text-2xl font-bold mb-2 border-b dark:border-zinc-700 pb-1'>{t('cv.languages')}</h2>
+			<ul class='list-disc pl-5'>
+				{profile.languages.es.map((l) => <li class='text-zinc-700 dark:text-zinc-300'>{l}</li>)}
+			</ul>
+		</section>
+	</div>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostsByYear from '../../../components/PostsByYear.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+type BlogPost = CollectionEntry<'blog'>;
+
+const lang = 'en';
+const t = useTranslations(lang);
+const posts = (await getCollection('blog', ({ data }) => data.locale === lang)).sort(
+	(a: BlogPost, b: BlogPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+	title={`${t('services.title')} - Dilan Murcia`}
+	description='Professional services: web development, n8n automation and artificial intelligence.'
+>
+	<div class='container'>
+		<div class='mb-10'>
+			<h1 class='text-3xl font-bold mb-2'>{t('services.title')}</h1>
+			<p class='text-zinc-700 dark:text-zinc-300 text-lg'>{t('services.subtitle')}</p>
+		</div>
+		{
+			posts.length > 0 ? (
+				<PostsByYear posts={posts} />
+			) : (
+				<p class='text-zinc-700 dark:text-zinc-300'>{t('posts.empty')}</p>
+			)
+		}
+	</div>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostsByYear from '../../../components/PostsByYear.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+type BlogPost = CollectionEntry<'blog'>;
+
+const lang = 'es';
+const t = useTranslations(lang);
+const posts = (await getCollection('blog', ({ data }) => data.locale === lang)).sort(
+	(a: BlogPost, b: BlogPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+	title={`${t('posts.title')} - Dilan Murcia`}
+	description='Servicios profesionales de desarrollo web, automatización con n8n e inteligencia artificial.'
+>
+	<div class='container'>
+		<div class='mb-10'>
+			<h1 class='text-3xl font-bold mb-2'>{t('posts.title')}</h1>
+			<p class='text-zinc-700 dark:text-zinc-300 text-lg'>{t('posts.subtitle')}</p>
+		</div>
+		{
+			posts.length > 0 ? (
+				<PostsByYear posts={posts} />
+			) : (
+				<p class='text-zinc-700 dark:text-zinc-300'>{t('posts.empty')}</p>
+			)
+		}
+	</div>
+</BaseLayout>
